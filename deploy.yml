@@ -1,4 +1,5 @@
-- hosts: all
+---
+- hosts: webservers
   become: true
   tasks:
       -name: Delpoy into Tomcat
