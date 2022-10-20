@@ -7,7 +7,7 @@
            src: /var/lib/jenkins/workspace/Ansible-demo/target/ROOT.war
           dest: /opt/apache-tomcat-9.0.68/webapps/ROOT.war
      notify:
-          - restart tomcat
+          -  restart tomcat
    handlers:
       -  name: restart tomcat
          service:
