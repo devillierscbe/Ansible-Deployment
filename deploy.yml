@@ -1,7 +1,6 @@
 ---
 -  hosts: tomcat
-  become: true
-  tasks:
+   tasks:
       -  name: Delpoy into Tomcat
          copy: 
            src: /var/lib/jenkins/workspace/Ansible-demo/target/ROOT.war
