@@ -1,15 +1,9 @@
 ---
 - hosts: tomcat
   become: True
-   tasks:
+  tasks:
       - name: Delpoy into Tomcat
         copy: 
            src: /var/lib/jenkins/workspace/Ansible-demo/target/ROOT.war
-          dest: /opt/apache-tomcat-9.0.68/webapps/ROOT.war
-     
-      - name: restart tomcat
-        service:
-            name: tomcat
-           state: restart
-           enabled: True
-      
+           dest: /opt/apache-tomcat-9.0.68/webapps/ROOT.war
+    
