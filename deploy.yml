@@ -4,6 +4,6 @@
   tasks:
       - name: Delpoy into Tomcat
         copy: 
-           src: /var/lib/jenkins/workspace/Ansible-demo/target/ROOT.war
+           src: /var/lib/jenkins/workspace/Ansilble-demo/target/ROOT.war
            dest: /opt/apache-tomcat-9.0.68/webapps/ROOT.war
     
