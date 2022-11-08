@@ -23,6 +23,21 @@
       </dependency>
 
   </dependencies>
+  <distributionManagement>
+	
+	    <repository>
+	      <id>nexus</id>
+	      <name>Sample-release</name>
+	      <url>http://3.110.215.149:8081/repository/Sample-release/</url>
+	    </repository>
+	    
+	    <snapshotRepository>
+	      <id>nexus</id>
+	      <name>Sample-snapshot</name>
+	      <url>http://3.110.215.149:8081/repository/Sample-snapshot/</url>
+	    </snapshotRepository>
+   </distributionManagement>
+	  
   <build>
     <finalName>getting-started-tomcat</finalName>
       <plugins>
