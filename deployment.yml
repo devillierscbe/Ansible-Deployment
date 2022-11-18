@@ -30,7 +30,7 @@ metadata:
 spec:
   selector:
     app: samplejava 
-  type: LoadBalancer
+  type: NodePort
   ports:
   - protocol: TCP
     port: 8080
