@@ -30,7 +30,7 @@ metadata:
 spec:
   selector:
     app: samplejava 
-  type: Nodeport
+  type: NodePort
   ports:
   - protocol: TCP
     port: 80
