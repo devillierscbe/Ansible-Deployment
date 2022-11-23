@@ -1,0 +1,38 @@
+pipeline{
+
+agent any
+
+tools{
+maven 'maven3.8.6'
+ }
+stages{
+    stage('checkout'){
+      steps{
+        git 'https://github.com/devillierscbe/Ansible-Deployment.git'
+       }
+    }
+    stage('MavenBuild'){
+      steps{
+        sh "mvn clean package"
+       }
+    }
+    stage('DockerBuild'){
+      steps{
+        sh "docker build -t robinksk/sample-java:1 ."
+       }
+    }
+    stage('Dockerpush'){
+      steps{
+        withCredentials([string(credentialsId: 'DOCKER_CREDENTIALS', variable: 'DOCKER_CREDENTIALS')]){
+        sh "docker login -u robinksk -p ${DOCKER_CREDENTIALS}"
+       }
+        sh "docker push robinksk/sample-java:1"
+       }
+    }
+    stage('KubernetesDeployment'){
+      steps{
+        sh "kubectl apply -f deployment.yml"
+       }
+    }
+  }
+}
